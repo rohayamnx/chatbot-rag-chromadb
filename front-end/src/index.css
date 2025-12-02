@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .message-container {
+    @apply py-4 sm:py-6 px-2 sm:px-6;
+  }
+
+  .message-container.user {
+    @apply bg-transparent;
+  }
+
+  .message-container.bot {
+    @apply bg-gray-50/50;
+  }
+
+  .message-content {
+    @apply max-w-full sm:max-w-[95%] lg:max-w-[85%] mx-auto flex gap-2 sm:gap-4 items-start;
+  }
+
+  .message-bubble {
+    @apply max-w-none;
+  }
+
+  .message-bubble.bot {
+    @apply prose prose-sm sm:prose-base 
+           prose-pre:bg-gray-800 prose-pre:text-gray-100 
+           prose-code:text-gray-800 prose-code:bg-gray-100 
+           prose-code:px-1 prose-code:py-0.5 prose-code:rounded-md;
+  }
+
+  .chat-input-container {
+    @apply fixed lg:static bottom-0 left-0 right-0 bg-gradient-to-t from-white via-white to-transparent pb-4 pt-6;
+  }
+
+  .chat-input-wrapper {
+    @apply max-w-full sm:max-w-[95%] lg:max-w-[85%] mx-auto relative;
+  }
+
+  .welcome-container {
+    @apply flex flex-col items-center justify-center h-full space-y-4 p-4;
+  }
+
+  .welcome-icon {
+    @apply w-16 h-16 sm:w-24 sm:h-24 bg-gradient-to-r from-blue-500 to-purple-500 
+           rounded-full flex items-center justify-center text-white 
+           shadow-lg animate-fade-in;
+  }
+
+  .welcome-text {
+    @apply text-xl sm:text-2xl font-semibold text-transparent bg-clip-text 
+           bg-gradient-to-r from-blue-600 to-purple-600 text-center;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out;
+  }
+}
